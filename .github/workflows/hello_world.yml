@@ -5,11 +5,11 @@ name: CI
 
 # Controls when the workflow will run
 on: 
-  push_request:
+  push:
     branches:
       - main
-  pull:
-    branch:
+  pull_request:
+    branches:
       - main_1
   
   workflow_dispatch:
