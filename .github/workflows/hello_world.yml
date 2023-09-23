@@ -11,7 +11,7 @@ on:
 jobs:
   job1:
     name: JOB 1
-    runs-on: ubunto-latest
+    runs-on: ubuntu-latest
     steps:
       - name : step one
         uses: actions/checkout@v2
