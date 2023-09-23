@@ -13,20 +13,18 @@ jobs:
     name: JOB 1
     runs-on: ubunto-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
       - name : step one
+        uses: actions/checkout@v2
       - name : step two
+        run: |
+          echo Hello, world!
+          env | sort
   job2:
     name: JOB 2
     runs-on: windows-latest
     steps:
       - name : step one
-      - name : step two
+        uses: actions/checkout@v2
 
 
 
@@ -111,3 +109,4 @@ jobs:
 #         run: |
 #           echo Add other actions to build,
 #           echo test, and deploy your project.
+
