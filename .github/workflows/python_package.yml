@@ -32,3 +32,38 @@ jobs:
         with:
           name: python-package
           path: ./dist/*.tar.gz 
+          
+      - name: Download and Install Package
+        run: |
+          mkdir -p ~/.pip
+          echo -e "[global]\nextra-index-url=https://pypi.org/simple" >> ~/.pip/pip.conf
+          pip install https://github.com/{username}/{repository}/releases/latest/download/{package-name}.whl
+        env:
+          username: tarungurjar11
+          repository: github_actions_1
+          package-name: python-package
+          
+  # test-ubuntu:
+  #   name: package testing on ubuntu
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name : checkout repo
+  #       uses: actions/checkout@v2
+
+  #     - name: Set up Python
+  #       uses: actions/setup-python@v2
+  #       with:
+  #         python-version: 3.9  # Replace with your desired Python version
+      
+      # - name: Install Dependencies
+      #   run: |
+      #     pip install -r requirements.txt
+      
+      # - name: Build Python Package
+      #   run: python setup.py sdist bdist_wheel  # Replace with your build command
+
+      # - name: Run Tests
+      #   run: |
+      #     # Run your tests here
+      #     # For example:
+      #     # python -m unittest discover tests
