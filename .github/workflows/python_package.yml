@@ -1,0 +1,34 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Python package test
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  ubuntu:
+    name: package on ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      - name : checkout repo
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9  # Replace with your desired Python version
+      
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+      
+      - name: Build Python Package
+        run: python setup.py sdist bdist_wheel  # Replace with your build command
+
+      - name: Upload to GitHub Packages
+        uses: actions/upload-artifact@v2
+        with:
+          name: python-package
+          path: ./dist/*.tar.gz 
