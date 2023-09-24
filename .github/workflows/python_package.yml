@@ -28,11 +28,10 @@ jobs:
         run: python setup.py sdist bdist_wheel  # Replace with your build command
 
       - name: Upload to GitHub Packages
-        run : python3 -m twine upload dist/*
-        # uses: actions/upload-artifact@v2
-        # with:
-        #   name: test_package
-        #   path: ./dist/*.tar.gz 
+        uses: actions/upload-artifact@v2
+        with:
+          name: test_package
+          # path: ./dist/*.tar.gz 
           
       - name: Download and Install Package
         run: |
