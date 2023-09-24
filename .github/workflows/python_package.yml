@@ -37,7 +37,7 @@ jobs:
         run: |
           mkdir -p ~/.pip
           echo -e "[global]\nextra-index-url=https://pypi.org/simple" >> ~/.pip/pip.conf
-          pip install https://github.com/{username}/{repository}/releases/latest/download/{package-name}.whl
+          pip install https://github.com/{username}/{repository}/releases/latest/download/test_package.whl
         env:
           username: tarungurjar11
           repository: github_actions_1
