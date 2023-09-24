@@ -36,9 +36,10 @@ jobs:
       - name: Download all the dists
         uses: actions/download-artifact@v3
         with:
-          name: python-package-distributions
+          name: test_package
           path: dist/
-          
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Download and Install Package
         run: |
           mkdir -p ~/.pip
