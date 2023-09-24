@@ -37,7 +37,7 @@ jobs:
         run: |
             mkdir -p ~/.pip
             echo -e "[global]\nextra-index-url=https://pypi.org/simple" >> ~/.pip/pip.conf
-            pip install https://api.github.com/repos/tarungurjar11/github_action_1/actions/artifacts/942494283
+            pip install https://api.github.com/repos/tarungurjar11/github_action_1/actions/artifacts/942494283/zip
           # https://github.com/tarungurjar11/github_action_1/releases/latest/download/test_package-0.1.0-py3-none-any.whl
         env:
             username: tarungurjar11
@@ -46,3 +46,5 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Run Tests
         run: python -m test.py
+
+# https://api.github.com/repos/tarungurjar11/github_action_1/actions/artifacts
