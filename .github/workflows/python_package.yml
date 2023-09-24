@@ -30,7 +30,7 @@ jobs:
       - name: Upload to GitHub Packages
         uses: actions/upload-artifact@v2
         with:
-          name: python-package
+          name: test_package
           path: ./dist/*.tar.gz 
           
       - name: Download and Install Package
