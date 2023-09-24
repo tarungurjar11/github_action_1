@@ -41,8 +41,8 @@ jobs:
         env:
           username: tarungurjar11
           repository: github_actions_1
-          package-name: python-package
-          
+          package-name: test_package
+
   # test-ubuntu:
   #   name: package testing on ubuntu
   #   runs-on: ubuntu-latest
